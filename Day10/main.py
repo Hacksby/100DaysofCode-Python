@@ -34,11 +34,11 @@ operator_dictionary = {
 # calculator function
 def calculator():
     print(logo)
-    keep_going = True  # loop controler
+    keep_going = True  # loop controller
     n1 = float(input("Type the first number: "))
     print("\nOperator Selection\n")
-
     while keep_going:
+        keep_going = False
         for key in operator_dictionary:
             print(key)
 
@@ -51,8 +51,8 @@ def calculator():
         if input(f"Type 'y' to continue calculating with {answer}, or 'n' to begin new calculation: \n").lower() == "y":
             # to keep answer in variable n1 and keep operating with this last value
             n1 = answer
+            keep_going = True
         else:
-            keep_going = False
             calculator()
 
 
